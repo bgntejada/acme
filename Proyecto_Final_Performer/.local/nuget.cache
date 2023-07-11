@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jhaeizGyceEof3LRK+n0AZSJggfRgnHPrkhB+oJnpeeyDEr6TKhDF0HVKTSPm7fNJ7iijAeY2WLahVQrMexR2A==",
+  "dgSpecHash": "/UXNNZNyXekTd32o40TMSVe2ZjU0SxhmKTBy380alWJg+28zx3M2JbMl2DO8dVYl6wy2kerC/nsf4nHtUSxzwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bgnte\\Documents\\UiPath\\workspace\\Proyecto_Final_Dispatcher\\Proyecto_Final_\\.local\\",
+  "projectFilePath": "C:\\Users\\bgnte\\Documents\\UiPath\\workspace\\Proyecto_Final_Dispatcher\\Proyecto_Final_Performer\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\bgnte\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\bgnte\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",

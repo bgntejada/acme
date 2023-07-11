@@ -18734,9 +18734,9 @@
     "restore": {
       "projectUniqueName": "Proyecto_Final_Dispatcher",
       "projectName": "Proyecto_Final_Dispatcher",
-      "projectPath": "C:\\Users\\bgnte\\Documents\\UiPath\\workspace\\Proyecto_Final_Dispatcher\\Proyecto_Final_\\.local",
+      "projectPath": "C:\\Users\\bgnte\\Documents\\UiPath\\workspace\\Proyecto_Final_Dispatcher\\Proyecto_Final_Dispatcher\\.local",
       "packagesPath": "C:\\Users\\bgnte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bgnte\\Documents\\UiPath\\workspace\\Proyecto_Final_Dispatcher\\Proyecto_Final_\\.local"
+      "outputPath": "C:\\Users\\bgnte\\Documents\\UiPath\\workspace\\Proyecto_Final_Dispatcher\\Proyecto_Final_Dispatcher\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
