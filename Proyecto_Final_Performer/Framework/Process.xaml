@@ -117,6 +117,9 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_VendorList">
           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;in_VendorList&quot;).ToString" />
         </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="output_Vendors_Path">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;output_Vendors_Path&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

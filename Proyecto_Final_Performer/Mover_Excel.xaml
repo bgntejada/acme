@@ -2,6 +2,7 @@
   <x:Members>
     <x:Property Name="output_Vendors" Type="InArgument(x:String)" />
     <x:Property Name="in_VendorList" Type="InArgument(x:String)" />
+    <x:Property Name="output_Vendors_Path" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -96,7 +97,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[_out_PathExists_1__Exists]" sap:VirtualizedContainerService.HintSize="410.4,116" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="Output_Vendors" PathType="Folder">
+    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[_out_PathExists_1__Exists]" sap:VirtualizedContainerService.HintSize="410.4,116" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[output_Vendors_Path]" PathType="Folder">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,7 +113,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Output_Vendors]" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[output_Vendors_Path]" />
         </Sequence>
       </If.Then>
       <If.Else>
