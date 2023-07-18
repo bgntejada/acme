@@ -1,11 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Descargar_Excel" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Descargar_Excel" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_URL_ACME" Type="InArgument(x:String)" />
+    <x:Property Name="in_file_path" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>850.4,864</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,1388.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Descargar_Excel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -42,6 +43,7 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -88,27 +90,33 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Descargar_Excel" sap:VirtualizedContainerService.HintSize="545.6,799.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Descargar_Excel" sap:VirtualizedContainerService.HintSize="592,1284" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="483.2,687.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="c7e2cac1-e873-4701-98d1-f2b33e40526a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="529.6,1172" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="c7e2cac1-e873-4701-98d1-f2b33e40526a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,470.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,955.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="out_FileExists" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Vendors'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c7e2cac1-e873-4701-98d1-f2b33e40526a" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Vendors'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c7e2cac1-e873-4701-98d1-f2b33e40526a" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/" CvElementArea="295, 347, 258, 64" CvTextArea="398, 366, 85, 21" CvTextArgument="Vendors" CvType="Button" DesignTimeRectangle="295, 346, 258, 64" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Vendors'" Guid="03727567-1f13-4535-bfc4-79bd8936c22f" InformativeScreenshot="c10ce4f779861af375a2824dd25290e1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.PointOffset>
@@ -117,7 +125,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Vendor List'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c7e2cac1-e873-4701-98d1-f2b33e40526a" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Vendor List'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c7e2cac1-e873-4701-98d1-f2b33e40526a" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/" DesignTimeRectangle="576, 971, 311, 33" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Download Vendor List'" FullSelectorArgument="&lt;webctrl aaname='Download Vendor List' parentid='dashmenu' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Download Vendor List' parentid='dashmenu' tag='A' type='' class='' check:innerText='Download Vendor List' /&gt;" Guid="c6fbf81c-dc66-4845-aa58-0be11f0563b3" ImageBase64="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" InformativeScreenshot="9ec00aaa594983d729aa2e6046d036d3.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -131,6 +139,36 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
+            <ui:FileExistsX DisplayName="File Exists" Exists="[out_FileExists]" sap:VirtualizedContainerService.HintSize="433.6,134.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_file_path]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,270.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_de_Excepciones_Sistema.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Control_de_Excepciones_Sistema.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">
+                      <Literal x:TypeArguments="x:String">Descarga</Literal>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_Fichero_Existe">
+                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="out_FileExists" />
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.6" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
