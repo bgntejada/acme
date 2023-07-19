@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>850.4,602.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,1405.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Leer_Excel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -101,7 +101,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer_Excel" sap:VirtualizedContainerService.HintSize="496,460.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer_Excel" sap:VirtualizedContainerService.HintSize="638.4,1340.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="in_Path" />
     </Sequence.Variables>
@@ -110,7 +110,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,348.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="576,132.8" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// En esta secuencia se ha descargado el fichero Excel. Se han recogido posibles excepciones y se ha visto conveniente poner la caja dentro de la secuencia. Además de insertar la columna Total" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="576,1056" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="539.2,824.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" KeepExcelFileOpen="True" ResizeWindow="None" TemplatePath="[in_Vendor]" UseTemplate="True" WorkbookPath="[in_Vendor]">
           <ueab:ExcelApplicationCard.Body>
@@ -132,10 +133,10 @@
         </ueab:ExcelApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,184" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="542.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -145,9 +146,7 @@
             </ActivityAction.Argument>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_de_Excepciones_Negocio.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Control_de_Excepciones_Negocio.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">
-                  <Literal x:TypeArguments="x:String">Documento</Literal>
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">Documento</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </ActivityAction>
