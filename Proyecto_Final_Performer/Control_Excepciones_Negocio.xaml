@@ -88,6 +88,7 @@
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Excepciones" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -103,30 +104,30 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <av:Point x:Key="ShapeLocation">350,12.399999999999999</av:Point>
+          <av:Point x:Key="ShapeLocation">499.99999999999994,2.3999999999999986</av:Point>
           <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">380,87.6 380,126.4</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">530,77.6 530,126.4</av:PointCollection>
           <x:Double x:Key="Height">690.8000000000001</x:Double>
           <x:Double x:Key="Width">1016.8000000000001</x:Double>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
-        <x:Reference>__ReferenceID6</x:Reference>
+        <x:Reference>__ReferenceID8</x:Reference>
       </Flowchart.StartNode>
       <FlowDecision x:Name="__ReferenceID1" Condition="[in_Importe_total &gt;= Importe_minimo]" DisplayName="Comprobar_minimo" sap:VirtualizedContainerService.HintSize="112,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <av:Point x:Key="ShapeLocation">560.4,216.4</av:Point>
+            <av:Point x:Key="ShapeLocation">744,196.4</av:Point>
             <av:Size x:Key="ShapeSize">112,87.2</av:Size>
-            <av:PointCollection x:Key="FalseConnector">672.4,260 690,260 690,393.6</av:PointCollection>
+            <av:PointCollection x:Key="FalseConnector">856,240 910,240 910,413.6</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <FlowDecision.False>
           <FlowStep x:Name="__ReferenceID0">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">590,393.6</av:Point>
+                <av:Point x:Key="ShapeLocation">810,413.6</av:Point>
                 <av:Size x:Key="ShapeSize">200,52.8</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -141,27 +142,26 @@
         </FlowDecision.False>
       </FlowDecision>
       <x:Reference>__ReferenceID0</x:Reference>
-      <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID1}" x:Name="__ReferenceID6" DisplayName="Flow Switch" Expression="[in_Tipo_Comprobacion]" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_3">
+      <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID1}" x:Name="__ReferenceID8" DisplayName="Flow Switch" Expression="[in_Tipo_Comprobacion]" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">344.8,126.4</av:Point>
+            <av:Point x:Key="ShapeLocation">494.8,126.4</av:Point>
             <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
             <x:String x:Key="DefaultCaseDisplayName">minimo</x:String>
-            <av:PointCollection x:Key="Default">415.20000000000005,170 644.4,170 644.4,216.4</av:PointCollection>
-            <av:PointCollection x:Key="tablaConnector">344.8,170 270,170 270,206.4</av:PointCollection>
+            <av:PointCollection x:Key="Default">565.2,170 828,170 828,196.4</av:PointCollection>
+            <av:PointCollection x:Key="tablaConnector">494.8,170 270,170 270,206.4</av:PointCollection>
+            <av:PointCollection x:Key="CredencialesConnector">494.8,191.8 410,191.8 410,533.6</av:PointCollection>
+            <av:PointCollection x:Key="DocumentosConnector">565.2,191.8 595.2,191.8 595.2,560 630,560</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <FlowDecision x:Key="tabla" x:Name="__ReferenceID2" DisplayName="Tabla_vacia" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-          <FlowDecision.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Datatable.RowCount = 0" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Key="tabla" x:Name="__ReferenceID2" Condition="[in_Datatable.RowCount = 0]" DisplayName="Tabla_vacia" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">234.79999999999998,206.4</av:Point>
               <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
               <av:PointCollection x:Key="TrueConnector">234.79999999999998,250 100,250 100,303.6</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">305.2,250 390,250 390,306.4</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">305.2,250 320,250 320,396.4 140,396.4 140,426.4</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -186,16 +186,16 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <av:Point x:Key="ShapeLocation">330.8,306.4</av:Point>
+                  <av:Point x:Key="ShapeLocation">80.80000000000001,426.4</av:Point>
                   <av:Size x:Key="ShapeSize">118.4,87.2</av:Size>
-                  <av:PointCollection x:Key="FalseConnector">449.20000000000005,350 460,350 460,443.6 340,443.6 340,473.6</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">199.20000000000002,470 210,470 210,583.6 119.99999999999999,583.6 119.99999999999999,613.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <FlowDecision.False>
                 <FlowStep x:Name="__ReferenceID5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">240,473.6</av:Point>
+                      <av:Point x:Key="ShapeLocation">19.999999999999986,613.6</av:Point>
                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -211,11 +211,43 @@
             </FlowDecision>
           </FlowDecision.False>
         </FlowDecision>
+        <FlowStep x:Key="Credenciales" x:Name="__ReferenceID6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">310,533.6</av:Point>
+              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New BusinessRuleException(&quot;Credenciales incorrectas en ACME Business&quot;)]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Throw_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </FlowStep>
+        <FlowStep x:Key="Documentos" x:Name="__ReferenceID7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">630,533.6</av:Point>
+              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New BusinessRuleException(&quot;Problema con el fichero Excel seleccionado&quot;)]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Throw_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </FlowStep>
       </FlowSwitch>
       <x:Reference>__ReferenceID2</x:Reference>
       <x:Reference>__ReferenceID3</x:Reference>
       <x:Reference>__ReferenceID4</x:Reference>
       <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
     </Flowchart>
   </Sequence>
 </Activity>

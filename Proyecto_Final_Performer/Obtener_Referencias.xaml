@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Cargar_cola" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Cargar_cola" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Referencias" Type="InArgument(x:String)" />
     <x:Property Name="in_VendorList" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>908,4241.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,2396</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Cargar_cola_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,9 +116,10 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="918.4,4176.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="668.8,2188.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="OutputAllItems" />
     </Sequence.Variables>
@@ -127,28 +128,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="856,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Write your comments in the Text property" />
-    <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="bgntejada@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="856,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="New, InProgress, Successful" QueueName="ACME_Vendor_list" Result="[OutputAllItems]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="856,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[OutputAllItems.Count.ToString]" />
-    <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="856,3655.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[OutputAllItems]">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="606.4,75.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Obtiene las Referencias de la cola y las busca en la página.&#xD;&#xA;" />
+    <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" FolderPath="bgntejada@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="606.4,143.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="New, InProgress, Successful" QueueName="ACME_Vendor_list" Result="[OutputAllItems]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="606.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[OutputAllItems.Count.ToString]" />
+    <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="606.4,1648" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[OutputAllItems]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:QueueItem">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="822.4,3467.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572.8,1460" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: ACME System 1 - Search" sap:VirtualizedContainerService.HintSize="779.2,3377.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: ACME System 1 - Search" sap:VirtualizedContainerService.HintSize="529.6,1370.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="745.6,3160.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1153.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="out_Search_Result_Data" />
                       <Variable x:TypeArguments="sd:DataTable" Name="dt_Data" />
@@ -159,7 +160,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vendor TaxID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="683.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Text="[currentItem.Reference]" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vendor TaxID'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Text="[currentItem.Reference]" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/invoices/search" CvType="InputBox" DesignTimeRectangle="310, 460, 606, 43" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT vendorTaxID'" FullSelectorArgument="&lt;webctrl id='vendorTaxID' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='vendorTaxID' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="95238386-8587-420a-abf3-6ec550721deb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAmIAAAAvCAYAAABAD6Z9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIESURBVHhe7dqxjqpQFIbRef9nk1JDT6ENUqhRUTyTbYToTGwc7t3NWslfHOdM/wX4KgAApBBiAABJhBgAQJJfIda2banrulRVVRaLhZmZmZn9YdFU0VbRWD+9hFjTNGW5XJb1el22223pus7MzMzM/rBoqmiraKxorWdTiEWlxYX4h8PhUI7HYzmdTuV8PpuZmZnZB4uWiqba7/f3xorWen4yNoVYPDKLWovLwzCU2+1mZmZmZjMs2iqibLPZ3JtrNIVYvL/c7Xb3iwAAzCsaK946RnONphCLj8n6vr9XGwAA84rGitaK5hq9hNjlcnmcAACYW7TW2xC7Xq+PEwAAc4vWEmIAAAmEGABAEiEGAJBEiAEAJBFiAABJhBgAQBIhBgCQRIgBACQRYgAASYQYAEASIQYAkESIAQAkEWIAAEmEGABAEiEGAJBEiAEAJBFiAABJhBgAQBIhBgCQRIgBACQRYgAASYQYAEASIQYAkESIAQAkEWIAAEmEGABAEiEGAJBEiAEAJBFiAABJhBgAQJK3IVZVVen7/nECAGBu0VrRXKMpxOq6Lm3bPk4AAMwtWiuaazSFWPxhtVp5PQkA8A9EY0VrPT/4mkIsNE1zv9B1XRmG4fErAACfiqaKtorGitZ69hJiYXxkFu8v42MyMzMzM/t80VTvPgH7FWIAAPwPpXwDVa6r3p+iKq8AAAAASUVORK5CYII=" InformativeScreenshot="64b2b087b4d5ef91ccef45aabbcd8737.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Search' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -170,138 +171,166 @@
                         </uix:TargetAnchorable>
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="683.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/invoices/search" CvElementArea="308, 649, 90, 46" CvTextArea="324, 663, 58, 16" CvTextArgument="Search" CvType="Button" DesignTimeRectangle="310, 651, 87, 42" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='buttonSearch' tag='BUTTON' type='button' class='btn btn-primary' aaname='Search' check:innerText='Search' /&gt;" Guid="81b2dd67-bb09-4c00-a0f1-41c7b9a045e5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAuCAYAAABH2WXrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAR2SURBVHhe7ZvPbxpHFMf7F1WKfO2Zv8Cn3Hrzpe3JrVTffGk5ceLAIbngWo6aSOTgoijCqhziWhsUGVnI2E2W4B8IrVYGFtlhQejb92Z3ll1YnAbDpFTzpK/EzLzZH59582ZGYr+CNmWmYSs0DVuhTcDefVPD6q9/4MEPv+Hr77a0PlPMjfkxx3GLwP7l6Rt889NTPPgxh5Wf81ozivkxR+YZtgA2jwQ7xHXWmk3MMxzhAWyROnREz1XMk7lKC2BzronroHU/MVdpAWxO7nHOWvcTc5WmYS9YGrZCadgKpWErlIatUBq2QmnYCqVhK9RiYWcqyL2/hTPwL0zmuj1Uy2dYS8b4f3HVUOWHvKzFtN1fi4OdoQf3IbvtLsrnLVIXtgTfbmLzPwd8SWEnT/t0pSGq+3+Ntb2itp64j3n4eqztS2tJYWcv+UodZGPaVtJ1mNTqfjgL1e9h7UUT5s2QO5IN4VzbyG7vhXzySGzXYFz34Uo38nPbrYjfRoUHs4PcfgsO+w1p0A8N0fZtvoFqO+hMfTvI52VASNh1JEud0Swc9FAuvkXCv/6sWhjs9TK/8BBm6QirMe3j2hD+9PIEOH9Qx5OyjSuXa3ooPPNBZrxBgnsLo0w+BxconPcg3AYtpP205MEmG/ZpfagjV2kiu0Wg9zuer+wfvsfv3NeHzSZ9DAum8Omj+Hz0vLNoYbBXksfI234EUWTZlo2C8Q6prdeTEeJHuvP+JDowyRMYH6mhWcdDKq+XuhTREsxIXsoa1UvYV6VwCqugyNf6aCMVXit4AOn5nNMTKkvYXTzJhHyeW3Co1jk5HtXNoMXBFnqF73cvULQo+kI7EjEtD0YRnyh2RPXVCUdrVMY1t0xJR1IUsTyLjF2v7MEeG5SdJmyqtStHo7oJ+bAbtbGAmE8uXzDsqFYzR0gdNFG98e5jV47FSwXTfqoRuJ3wdUrYfEmDUbZQ5oH0J1B132uPhf2nN6DSJ17ToC4h7EDJtyi0+U4dPKJyLJw4Zd7B8AeKzXX7tIh2ULy8FeU7YYvo/z/C3mmIKev+zXkwpp306Jzv5KWHh4ddLnxiK7hHfTiEezBeliK5Xfa/E/bUNHKEAiVkt1HH2nJGtr8YMZgXxsSCmNi+gMk5vN3AOtf5CyQcK3rQoUW2yCvTjYWUD4V/b8p24WMgZ3HnT8CeskAmnlmhQVhK2PwSXiQJowXRFCfIFsxgj0sw5JaOonZTACJzuygaXj42RcqQB6M9pD94fV3LQk5uDxngv8nZpGDrd9OlnRH39/fhA0pnafZZUtisxOMz5M9v4YxOIPRitA1sNJB+HD2sMMz1IsELDjUElaGEZwbl+izvq6XLoA/ztIaN7QauqOicVoTfXWtA9FBDWz6riVSwzVti2FpRadgKpWErlIatUBq2QmnYCqVhK5SGrVAatkJp2AoVC1v/GX4xiv0zvP7MY/6a+pmH/oBp/pr6AROb/jRvPmJ+zHHqp3nSeCRESqFcw8ld6/PE3JhfOKKlTcDWtigD/gFyxBOgPlwz7AAAAABJRU5ErkJggg==" InformativeScreenshot="eb99749fd7117ba03429e0c36c3fbdec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Search' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_Search_Result_Data]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='total' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="683.2,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V3">
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_Search_Result_Data]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='total' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V3">
                       <uix:NExtractData.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="300, 519, 1248, 517" DesignTimeScaleFactor="1.25" FriendlyName="'Invoice Number'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="0bb4a5da-62ca-464d-bacd-682a2d0d03a7" InformativeScreenshot="1a97b5c6831cf5f8ff386dbe3274d000.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Search Results' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NExtractData.Target>
                     </uix:NExtractData>
-                    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="683.2,2194.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="[in_vendorList]" UseTemplate="True" WorkbookPath="[in_vendorList]">
-                      <ueab:ExcelApplicationCard.Body>
-                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="649.6,1901.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                            <Sequence.Variables>
-                              <Variable x:TypeArguments="sd:DataTable" Name="out_Excel_Range" />
-                              <Variable x:TypeArguments="x:String" Name="out_Excel_reference" />
-                            </Sequence.Variables>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_Search_Result_Data]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="587.2,632" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                              <ui:ForEachRow.Body>
-                                <ActivityAction x:TypeArguments="sd:DataRow">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                                  </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,444" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[CurrentRow.Item(0).ToString.Contains(&quot;EUR&quot;)]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_2">
-                                      <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Decimal">[sumaTotal]</OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Decimal">[sumaTotal + Convert.ToDecimal(CurrentRow.Item(0).ToString.Replace(" EUR", ""))]</InArgument>
-                                            </Assign.Value>
-                                          </Assign>
-                                        </Sequence>
-                                      </If.Then>
-                                      <If.Else>
-                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8" />
-                                      </If.Else>
-                                    </If>
-                                  </Sequence>
-                                </ActivityAction>
-                              </ui:ForEachRow.Body>
-                            </ui:ForEachRow>
-                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="587.2,1114.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                              <TryCatch.Try>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_Excepciones.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Control_Excepciones.xaml">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:Decimal" x:Key="in_Importe_total">[sumaTotal]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">tabla</InArgument>
-                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Datatable">[out_Search_Result_Data]</InArgument>
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                </ui:InvokeWorkflowFile>
-                              </TryCatch.Try>
-                              <TryCatch.Catches>
-                                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="502.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ActivityAction x:TypeArguments="ui:BusinessRuleException">
-                                    <ActivityAction.Argument>
-                                      <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
-                                    </ActivityAction.Argument>
-                                  </ActivityAction>
-                                </Catch>
-                              </TryCatch.Catches>
-                              <TryCatch.Finally>
-                                <Sequence sap:VirtualizedContainerService.HintSize="499.2,883.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ueab:FindReplaceValueX ReplaceWith="{x:Null}" DisplayName="Find/Replace Value" FoundAt="[out_Excel_reference]" sap:VirtualizedContainerService.HintSize="436.8,236.8" sap2010:WorkflowViewState.IdRef="FindReplaceValueX_1" LookIn="Values" Operation="Find" ValueToFind="[currentItem.Reference.ToString]" WhereToSearch="[Excel.Sheet(&quot;Vendor list&quot;).Range(&quot;A:A&quot;)]" />
-                                  <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Vendor list&quot;).Cell(out_Excel_reference.Replace(&quot;A&quot;,&quot;C&quot;))]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="436.8,160" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[sumaTotal]" />
-                                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                                    <TryCatch.Try>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_Excepciones.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Control_Excepciones.xaml">
-                                        <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:Decimal" x:Key="in_Importe_total">[sumaTotal]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">minimo</InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Datatable">[out_Search_Result_Data]</InArgument>
-                                        </ui:InvokeWorkflowFile.Arguments>
-                                      </ui:InvokeWorkflowFile>
-                                    </TryCatch.Try>
-                                    <TryCatch.Catches>
-                                      <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                      <TryCatch.Try>
+                        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="683.2,1424.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="[in_vendorList]" UseTemplate="True" WorkbookPath="[in_vendorList]">
+                          <ueab:ExcelApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="649.6,688" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="sd:DataTable" Name="out_Excel_Range" />
+                                  <Variable x:TypeArguments="x:String" Name="out_Excel_reference" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_Search_Result_Data]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="587.2,188" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,444" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ActivityAction x:TypeArguments="ui:BusinessRuleException">
-                                          <ActivityAction.Argument>
-                                            <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
-                                          </ActivityAction.Argument>
-                                        </ActivityAction>
-                                      </Catch>
-                                    </TryCatch.Catches>
-                                  </TryCatch>
-                                </Sequence>
-                              </TryCatch.Finally>
-                            </TryCatch>
-                          </Sequence>
-                        </ActivityAction>
-                      </ueab:ExcelApplicationCard.Body>
-                    </ueab:ExcelApplicationCard>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Invoices'" sap:VirtualizedContainerService.HintSize="683.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V3">
+                                        <If Condition="[CurrentRow.Item(0).ToString.Contains(&quot;EUR&quot;)]" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_2">
+                                          <If.Then>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Decimal">[sumaTotal]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Decimal">[sumaTotal + Convert.ToDecimal(CurrentRow.Item(0).ToString.Replace(" EUR", ""))]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8" />
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="587.2,344.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                  <TryCatch.Try>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_Excepciones.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Control_Excepciones_Negocio.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:Decimal" x:Key="in_Importe_total">[sumaTotal]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">tabla</InArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Datatable">[out_Search_Result_Data]</InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                                        </ActivityAction.Argument>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                  <TryCatch.Finally>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="499.2,883.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ueab:FindReplaceValueX ReplaceWith="{x:Null}" DisplayName="Find/Replace Value" FoundAt="[out_Excel_reference]" sap:VirtualizedContainerService.HintSize="436.8,236.8" sap2010:WorkflowViewState.IdRef="FindReplaceValueX_1" LookIn="Values" Operation="Find" ValueToFind="[currentItem.Reference.ToString]" WhereToSearch="[Excel.Sheet(&quot;Vendor list&quot;).Range(&quot;A:A&quot;)]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Vendor list&quot;).Cell(out_Excel_reference.Replace(&quot;A&quot;,&quot;C&quot;))]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="436.8,160" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[sumaTotal]" />
+                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                        <TryCatch.Try>
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_Excepciones.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Control_Excepciones_Negocio.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:Decimal" x:Key="in_Importe_total">[sumaTotal]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">minimo</InArgument>
+                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Datatable">[out_Search_Result_Data]</InArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                          </ui:InvokeWorkflowFile>
+                                        </TryCatch.Try>
+                                        <TryCatch.Catches>
+                                          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                                              </ActivityAction.Argument>
+                                            </ActivityAction>
+                                          </Catch>
+                                        </TryCatch.Catches>
+                                      </TryCatch>
+                                    </Sequence>
+                                  </TryCatch.Finally>
+                                </TryCatch>
+                              </Sequence>
+                            </ActivityAction>
+                          </ueab:ExcelApplicationCard.Body>
+                        </ueab:ExcelApplicationCard>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Control_Excepciones_Negocio.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Control_Excepciones_Negocio.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:Decimal" x:Key="in_Importe_total" />
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Tipo_Comprobacion">
+                                  <Literal x:TypeArguments="x:String">Documento</Literal>
+                                </InArgument>
+                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Datatable" />
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Invoices'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cbced5e4-2e04-4f3e-9b00-70b17843950c" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/invoices/search-by-vendor/RU567434" CvTextArgument="Invoices" CvType="Text" DesignTimeRectangle="305, 308, 64, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Invoices'" FullSelectorArgument="&lt;webctrl aaname='Invoices' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invoices' tag='A' type='' class='' check:innerText='Invoices' /&gt;" Guid="cb100f9d-a1e2-47f7-8e46-52b688635b3b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAYCAYAAABDX1s+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOkSURBVFhH7VbPSxtBGO3/lJMnT7l58uQtp55y8xKQECKiSFCMFGlAEgmhHiwetpSEJay/YpRUMYkYo/gD2yBhERUJe379ZnY2OzvGmlorHvbwYGfmzduZN9/3zXywLAs+XPiGKPANUeAbosA3RIFviALJkDZSMwUEZqo4lghvip0yAmMFRHZ6jL0RfEMUvC9D3gH+bAg/MQOpwyukPhsYjNI4nWBwdhfar47NOahgkPrCa/dCx0EH+TTx4xUYHbvdqtURmdUxQHxbp4zM4a07p1eEdExoy5sYjttzAnEDH5dPcc41BR7a0LLrCIr1DYyvI5K/gumMM5j2HlyOgbB2hZasQ+jDEB3B8QKG5vaQ2WoiQ4sbYqJT+6hw3k8kJqj9ueFdQOcUEeINfrngbZO0gmxD02WkjCa0/B5CbB7pR3aEKaohnWukZhmngJF0FbmtBlJpgxsaXDqz/3d3hhjTiRqIaA1oMid9KtYk9kZGxRzOosF1h1db9r8E+jCENrXoCNs41pgYRc6l3a6sFqldwsqdy7HnFpE4ou/OBWLshEm75jnZK0xOUb9jrmKIuVHi7fCaFEUUaZWvRTrhMlZM8e9oCbm2iFgBc43NLSJ5Qu3LKkZIZ3Rb5twit0B7m6ujJs3ryxCvkNvfPcmTfQzzhTtpI9LF2eiTaWXhPL/OF86NU3TzS6QRLSOvhLWLayQTxEnsUvRQ1Mn4XsYQaY1obYqiJkZZVE8T78jE/ZN6fRriyeme/WKukzYiXbrhyPli046GA1nLo0uaLF3k9TwC/Yf4bM6ToNRiB1TTS3aqs74olQGqX6mt1ktqSD+GiJOm0OVpIwzg4drlv8AQdT2PIAyhWtF7XMHDDSpbVcQ+ucU1MOtN41czxGrVEaK+0Y1bO11knWdTxkDynNqK7pMp82MXA3TbJI9EQZ/YEwX+L9B5oPrDaqGOyQO3//UMsW6Qm6f5i2Wer6G86Y49V1TH91BibUW3d1G9hbaod42yC7pOdU7m0NztMj0TqJ8O6H5nF8G4jti+UniNTT73PxlioaWzH5DG2DoyLe/Yv127OkLLdX5dJheYAVQsv1GxZByT0oaeBbwva3NSWfE0cNKBXc2MQ1dzeJVx6PmwWsIw59Q9Kfmqhlh3DYSpPzB/iJbcz9HrYUZV/0Q62V66ysOMPbpi21L0MdCjK5N2H2aBeBGhbBPHDxKnfYaEXDsoeh5xCJIhPhh8QxT4hijwDVHgG+KBhd/FdhxtQtgT4gAAAABJRU5ErkJggg==" InformativeScreenshot="a4a1316292e792752c5be387cf6665b4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Search Results' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
